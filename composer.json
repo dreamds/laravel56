@@ -8,7 +8,9 @@
         "php": ">=7.1.3",
         "fideloper/proxy": "~4.0",
         "laravel/framework": "5.6.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "dingo/api": "^2.2",
+        "tymon/jwt-auth":"1.*@rc"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
@@ -21,12 +23,14 @@
     "autoload": {
         "classmap": [
             "database/seeds",
-            "database/factories",
-            "app/Library/SnowFlake"
+            "database/factories"
         ],
         "psr-4": {
             "App\\": "app/"
-        }
+        },
+        "files": [
+            "app/Helpers/common_helper.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

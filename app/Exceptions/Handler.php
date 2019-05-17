@@ -48,8 +48,8 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        // 使用自定义的异常返回方法(Json)
-        if ($exception instanceof CustomHandler) {
+        // API需使用自定义的异常返回方法
+        if ($exception instanceof ApiHandler) {
             return $exception->render();
         }
 

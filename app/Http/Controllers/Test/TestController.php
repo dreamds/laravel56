@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Test;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Library\SnowFlake;
-use App\Exceptions\CustomHandler as UsException;
+use App\Exceptions\ApiHandler as UsException;
 use App\Models\Logic\GroupModel;
 
 class TestController extends Controller

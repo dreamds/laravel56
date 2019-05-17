@@ -9,11 +9,12 @@
 namespace App\Exceptions;
 
 use Exception;
+use App\Library\AdmError;
 
-class CustomHandler extends Exception
+class ApiHandler extends Exception
 {
     /**
-     * 自定义按照JSON格式进行异常返回
+     * 自定义API异常信息返回
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Exception  $exception
@@ -21,11 +22,12 @@ class CustomHandler extends Exception
      */
     public function render()
     {
-        // 统一以-1作为错误码返回
-        $code = $this->getCode() ? $this->getCode() : -1;
+        // 以-1作为错误码缺省值，可自定义错误码（0除外）
+        $code = $this->getCode() ? $this->getCode() : AdmError::GENERAL_ERROR;
         return response()->json([
             'code' => $code,
-            'msg'  => $this->getMessage()
+            'msg'  => $this->getMessage(),
+            'time' => microtime(true)
         ]);
     }
 }

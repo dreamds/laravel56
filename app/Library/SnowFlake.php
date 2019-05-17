@@ -8,7 +8,7 @@
 
 namespace App\Library;
 
-use App\Exceptions\CustomHandler as Exception;
+use App\Exceptions\ApiHandler as Exception;
 
 class SnowFlake
 {

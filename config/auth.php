@@ -42,9 +42,14 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'admapi' => [
+            'driver' => 'jwt',
+            'provider' => 'admusers',
+        ]
     ],
 
     /*
@@ -69,6 +74,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+
+         'admusers' => [
+             'driver' => 'eloquent',
+             'model'  => App\Models\Dao\User::class,
+         ],
 
         // 'users' => [
         //     'driver' => 'database',
